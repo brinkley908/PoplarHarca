@@ -24,7 +24,7 @@ namespace PoplarHarca
         {
 
 
-            string teamsEnpoint = Configuration.GetSection( "TeamsEnpoint" ).Value;
+            string teamsEnpoint = Configuration.GetSection( "TeamsEndpoint" ).Value;
 
 
             services.AddHttpClient( "teamsapi", c => {

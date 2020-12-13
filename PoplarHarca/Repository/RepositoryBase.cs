@@ -62,7 +62,6 @@ namespace PoplarHarca.Repository
 
         }
 
-
         public void Delete( TEntity entityToDelete )
         {
             throw new NotImplementedException();
@@ -73,8 +72,6 @@ namespace PoplarHarca.Repository
             throw new NotImplementedException();
         }
 
-  
-
         public TEntity GetByID( object id )
         {
             throw new NotImplementedException();
@@ -84,7 +81,6 @@ namespace PoplarHarca.Repository
         {
             throw new NotImplementedException();
         }
-
      
         public void Patch( TEntity entityToUpdate )
         {
