@@ -1,0 +1,40 @@
+﻿a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2)
+}
+
+
+.home-img {
+    transition: max-height .23s;
+    max-height: 100px;
+}
+
+
+.home-img-shrink {
+    transition: max-height .23s;
+    max-height: 70px;
+}
+
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background-color: #fff;
+}
