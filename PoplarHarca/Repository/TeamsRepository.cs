@@ -10,33 +10,25 @@ namespace PoplarHarca.Repository
     public class TeamsRepository : RepositoryBase<FootballTeams>, ITeamsRepository
     {
 
-
         private static List<Team> _teams = new List<Team>();
 
-        public TeamsRepository( IHttpClientFactory clientFactory ):base(clientFactory)
+        public TeamsRepository( IHttpClientFactory clientFactory ) : base( clientFactory )
         {
-            ClientName = "teamsapi";
+            ClientName = "thesportsdb";
             GZip = false;
-        }
-
-        public async Task<List<Team>> GetTeams()
-        {
 
             if ( !_teams.Any() )
             {
-                var footballTeams = await Get();
+                var footballTeams = Get().GetAwaiter().GetResult();
                 _teams = footballTeams.Teams;
             }
 
-            return _teams;
         }
 
-        public Team GetTeam( int id )
-        {
-            return _teams
-                .FirstOrDefault( x => x.IdTeam == id );
-        }
+        public List<Team> GetTeams() => _teams;
 
-      
+        public Team GetTeam( int id ) => _teams.FirstOrDefault( x => x.IdTeam == id );
+
+
     }
 }

@@ -9,8 +9,8 @@ namespace PoplarHarca.Repository
     public interface ITeamsRepository : IRepository<FootballTeams>
     {
 
+        List<Team> GetTeams();
 
-        Task<List<Team>> GetTeams();
         Team GetTeam(int id);
 
     }

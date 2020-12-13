@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PoplarHarca.Repository;
+using PoplarHarca.Service;
 using PoplarHarca.Models;
 
 namespace PoplarHarca.Controllers
@@ -13,17 +13,19 @@ namespace PoplarHarca.Controllers
     public class TeamsController : Controller
     {
 
-        private ITeamsRepository _teamsRepository;
-        public TeamsController( ITeamsRepository teamsRepository )
+        private ITeamsService _teamsService;
+        public TeamsController( ITeamsService  teamsService )
         {
-            _teamsRepository = teamsRepository;
+            _teamsService = teamsService;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<Team>> Get()
+        [HttpGet(Name = nameof(GetTeamList))]
+        [Route("GetTeamList")]
+        public IEnumerable<TeamListItem> GetTeamList()
         {
-            await _teamsRepository.GetTeams();
-            return null;
+
+            return _teamsService.GetTeamList();
+           
         }
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PoplarHarca.Repository;
+using PoplarHarca.Service;
 using System;
 
 namespace PoplarHarca
@@ -27,18 +28,17 @@ namespace PoplarHarca
             string teamsEnpoint = Configuration.GetSection( "TeamsEndpoint" ).Value;
 
 
-            services.AddHttpClient( "teamsapi", c => {
+            services.AddHttpClient( "thesportsdb", options => {
 
-                c.BaseAddress = new Uri( teamsEnpoint );
-                // Github API versioning
-                c.DefaultRequestHeaders.Add( "Accept", "application/x-www-form-urlencoded" );
-                // Github requires a user-agent
-                c.DefaultRequestHeaders.Add( "User-Agent", "TravelX Api" );
+                options.BaseAddress = new Uri( teamsEnpoint );
+                options.DefaultRequestHeaders.Add( "Accept", "application/x-www-form-urlencoded" );
+                options.DefaultRequestHeaders.Add( "User-Agent", "TravelX Api" );
 
             } );
 
             services.AddScoped( typeof( IRepository<> ), typeof( RepositoryBase<> ) )
-                    .AddScoped<ITeamsRepository, TeamsRepository>();
+                    .AddScoped<ITeamsRepository, TeamsRepository>()
+                    .AddScoped<ITeamsService, TeamsService>();
 
             services.AddControllersWithViews();
 
