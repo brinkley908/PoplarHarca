@@ -1,6 +1,8 @@
 ﻿import React, { Component } from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
 import Loader from 'react-loader-spinner'
 
 import "../custom.css";
@@ -20,15 +22,21 @@ export class Teams extends Component {
 
     showList(list) {
         return (
-            <Select
-                id="teamlist"
-                value={this.state.idTeam}
-            >
+            <>
+                <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+                    Select a team
+                </InputLabel>
+                <Select
+                    id="teamlist"
+                    value={this.state.idTeam}
+                    
+                >
 
-                {list.map(list =>
-                    <MenuItem value={list.idTeam}>{ list.strTeam }</MenuItem>
-                )}
-            </Select>
+                    {list.map(list =>
+                        <MenuItem key={list.strTeam } value={list.idTeam}>{list.strTeam}</MenuItem>
+                    )}
+                </Select>
+            </>
         );
     }
 
