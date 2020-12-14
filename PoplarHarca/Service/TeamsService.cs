@@ -34,7 +34,6 @@ namespace PoplarHarca.Service
 
         }
 
-
         public Team GetTeam(int id)
         {
             return _teamsRepository.GetTeam( id );
