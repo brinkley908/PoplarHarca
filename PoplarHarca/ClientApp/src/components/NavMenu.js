@@ -47,6 +47,7 @@ export const NavMenu = props => {
                     <NavbarBrand>
                         <img src={require('../images/logo.svg')} className={imageClass.join(' ')} id="home-img" alt="logo" />
                     </NavbarBrand>
+                    {/* 
                     <NavbarToggler onClick={toggleNavbar} className="mr-2" />
                     <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!collapsed} navbar>
                         <ul className="navbar-nav flex-grow">
@@ -55,6 +56,7 @@ export const NavMenu = props => {
                             </NavItem>
                         </ul>
                     </Collapse>
+                    */}  
                 </Container>
             </Navbar>
         </header>

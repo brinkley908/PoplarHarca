@@ -1,7 +1,6 @@
 ﻿import React, { Component } from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
 import Loader from 'react-loader-spinner'
 
 import "../custom.css";
@@ -40,8 +39,8 @@ export class Teams extends Component {
 
                 </Select>
 
-                <div className="team-logo">
-                    <img src={this.state.currentTeam.strTeamLogo}  alt="Team Logo"/>
+                 <div className="team-logo">
+                    <img src={this.state.currentTeam.strTeamLogo} alt="Team Logo" />
                 </div>
 
                 <div className="paragraph">

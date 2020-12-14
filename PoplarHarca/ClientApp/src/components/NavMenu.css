@@ -16,11 +16,11 @@ html {
 }
 .home-img {
   transition: max-height 0.23s;
-  max-height: 100px;
+  max-height: 80px;
 }
 .home-img-shrink {
   transition: max-height 0.23s;
-  max-height: 70px;
+  max-height: 40px;
 }
 #header {
   position: fixed;
