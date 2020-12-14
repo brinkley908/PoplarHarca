@@ -20,19 +20,14 @@ namespace PoplarHarca.Controllers
         }
 
         [HttpGet]
-        [Route("GetTeamList")]
-        public IEnumerable<TeamListItem> GetTeamList()
-        {
-            return _teamsService.GetTeamList();
-        }
+        [Route( "GetTeamList" )]
+        public IEnumerable<TeamListItem> GetTeamList() 
+            => _teamsService.GetTeamList();
 
         [HttpGet]
         [Route( "GetTeam/{id}" )]
-        public Team GetTeam(int id)
-        {
-            return _teamsService.GetTeam(id);
-        }
-
+        public Team GetTeam( int id ) 
+            => _teamsService.GetTeam( id );
 
     }
 }

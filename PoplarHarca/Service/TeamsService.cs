@@ -30,7 +30,7 @@ namespace PoplarHarca.Service
                     StrTeam = x.StrTeam
                 } ) );
 
-            return result.ToArray();
+            return result;
 
         }
 
