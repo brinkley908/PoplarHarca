@@ -1,4 +1,11 @@
-﻿/* Provide sufficient contrast against white background */
+﻿body {
+    /* Margin bottom by footer height */
+    // margin-bottom: 60px;
+    font: 'omnes Pro',sans-serif;
+    font-size: 20px;
+    background-color: #00b3bc;
+}/* Provide sufficient contrast against white background */
+
 a {
     color: #0366d6;
 }
@@ -17,7 +24,8 @@ code {
 
 .content-container {
     background-color: #fff;
-    padding: 200px 0 0 0;
+    padding: 200px 50px 50px 50px;
+    min-height: 100vh;
 
     h2 {
         font-weight: 700;
@@ -25,23 +33,29 @@ code {
 
     .content-container--wrapper {
 
-        .login-form {
-            text-align: center;
-            color: #e9ab6f;
+        .loading {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+        }
 
-            .MuiTextField-root {
-                width: 400px !important;
+        .paragraph {
+            white-space: pre-wrap;
+            text-align: justify;
+        }
 
-                input {
-                    width: 100% !important
-                }
+        .team-logo {
+            margin: 20px 0;
+
+            img {
+                height: 155px;
+                margin: auto;
+                display: block;
             }
+        }
 
-
-            .error {
-                color: darkred;
-                padding: 20px 0;
-            }
+        .MuiInput-root {
+            width: 100%;
         }
     }
 }

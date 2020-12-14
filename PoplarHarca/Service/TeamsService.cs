@@ -24,14 +24,22 @@ namespace PoplarHarca.Service
 
             _teamsRepository
                 .GetTeams()
-                .ForEach( x => result.Add( new TeamListItem { 
-                     IdTeam = x.IdTeam,
-                      StrTeam = x.StrTeam
+                .ForEach( x => result.Add( new TeamListItem
+                {
+                    IdTeam = x.IdTeam,
+                    StrTeam = x.StrTeam
                 } ) );
 
             return result.ToArray();
 
         }
+
+
+        public Team GetTeam(int id)
+        {
+            return _teamsRepository.GetTeam( id );
+        }
+
 
     }
 }

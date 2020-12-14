@@ -9,5 +9,7 @@ namespace PoplarHarca.Service
     public interface ITeamsService
     {
         IEnumerable<TeamListItem> GetTeamList();
+
+        Team GetTeam( int id );
     }
 }

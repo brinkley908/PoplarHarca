@@ -1,3 +1,9 @@
+body {
+  /* Margin bottom by footer height */
+  font: 'omnes Pro', sans-serif;
+  font-size: 20px;
+  background-color: #00b3bc;
+}
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
@@ -12,22 +18,29 @@ code {
 }
 .content-container {
   background-color: #fff;
-  padding: 200px 0 0 0;
+  padding: 200px 50px 50px 50px;
+  min-height: 100vh;
 }
 .content-container h2 {
   font-weight: 700;
 }
-.content-container .content-container--wrapper .login-form {
-  text-align: center;
-  color: #e9ab6f;
+.content-container .content-container--wrapper .loading {
+  width: 100px;
+  height: 100px;
+  margin: auto;
 }
-.content-container .content-container--wrapper .login-form .MuiTextField-root {
-  width: 400px !important;
+.content-container .content-container--wrapper .paragraph {
+  white-space: pre-wrap;
+  text-align: justify;
 }
-.content-container .content-container--wrapper .login-form .MuiTextField-root input {
-  width: 100% !important;
+.content-container .content-container--wrapper .team-logo {
+  margin: 20px 0;
 }
-.content-container .content-container--wrapper .login-form .error {
-  color: darkred;
-  padding: 20px 0;
+.content-container .content-container--wrapper .team-logo img {
+  height: 155px;
+  margin: auto;
+  display: block;
+}
+.content-container .content-container--wrapper .MuiInput-root {
+  width: 100%;
 }
