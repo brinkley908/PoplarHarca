@@ -10,3 +10,24 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.content-container {
+  background-color: #fff;
+  padding: 200px 0 0 0;
+}
+.content-container h2 {
+  font-weight: 700;
+}
+.content-container .content-container--wrapper .login-form {
+  text-align: center;
+  color: #e9ab6f;
+}
+.content-container .content-container--wrapper .login-form .MuiTextField-root {
+  width: 400px !important;
+}
+.content-container .content-container--wrapper .login-form .MuiTextField-root input {
+  width: 100% !important;
+}
+.content-container .content-container--wrapper .login-form .error {
+  color: darkred;
+  padding: 20px 0;
+}
