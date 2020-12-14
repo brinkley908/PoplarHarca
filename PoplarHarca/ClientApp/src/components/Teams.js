@@ -23,7 +23,7 @@ export class Teams extends Component {
         this.setState({ ...this.state, idTeam: value, currentTeam: team })
     }
 
-    showList(list) {
+    showContents(list) {
         return (
             <>
                 <InputLabel shrink id="demo-simple-select-placeholder-label-label">
@@ -75,13 +75,12 @@ export class Teams extends Component {
 
         let contents = this.state.loading
             ? this.loading()
-            : this.showList(this.state.teamList);
+            : this.showContents(this.state.teamList);
 
 
         return (
             <>
                 {contents}
-
             </>
         );
 
