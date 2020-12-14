@@ -50,6 +50,7 @@ code {
 }
 .content-container .content-container--wrapper .MuiInput-root .MuiSelect-select.MuiSelect-select {
   padding-left: 5px;
+  background-color: rgba(0, 0, 0, 0.03);
 }
 .content-container .content-container--wrapper .MuiInput-root.MuiInput-underline:after {
   border-bottom: 2px solid #00b3bc;

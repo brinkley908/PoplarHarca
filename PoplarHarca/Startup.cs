@@ -32,7 +32,7 @@ namespace PoplarHarca
 
                 options.BaseAddress = new Uri( teamsEnpoint );
                 options.DefaultRequestHeaders.Add( "Accept", "application/x-www-form-urlencoded" );
-                options.DefaultRequestHeaders.Add( "User-Agent", "TravelX Api" );
+                options.DefaultRequestHeaders.Add( "User-Agent", "The Sports DB Api" );
 
             } );
 

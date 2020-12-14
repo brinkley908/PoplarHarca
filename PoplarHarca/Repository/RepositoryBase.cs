@@ -61,30 +61,6 @@ namespace PoplarHarca.Repository
             }
 
         }
-
-        public void Delete( TEntity entityToDelete )
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete( object id )
-        {
-            throw new NotImplementedException();
-        }
-
-        public TEntity GetByID( object id )
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Post( TEntity entity )
-        {
-            throw new NotImplementedException();
-        }
-     
-        public void Patch( TEntity entityToUpdate )
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

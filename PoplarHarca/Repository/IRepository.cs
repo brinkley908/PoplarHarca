@@ -10,17 +10,6 @@ namespace PoplarHarca.Repository
     {
 
         Task<TEntity> Get();
-      
-        TEntity GetByID( object id );
-
-        void Post( TEntity entity );
-
-        void Patch( TEntity entityToUpdate );
-
-        void Delete( TEntity entityToDelete );
-
-        void Delete( object id );
-
-
+     
     }
 }
