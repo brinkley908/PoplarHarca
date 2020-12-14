@@ -19,16 +19,15 @@ export class Teams extends Component {
 
     async onChangeTeam(value) {
         const team = await this.getTeam(value);
-
         this.setState({ ...this.state, idTeam: value, currentTeam: team })
     }
 
     showContents(list) {
         return (
             <>
-                <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+                <label>
                     Select a team
-                </InputLabel>
+                </label>
                 <Select
                     id="teamlist"
                     value={this.state.idTeam}
@@ -38,10 +37,11 @@ export class Teams extends Component {
                     {list.map(list =>
                         <MenuItem key={list.strTeam} value={list.idTeam}>{list.strTeam}</MenuItem>
                     )}
+
                 </Select>
 
                 <div className="team-logo">
-                    <img src={this.state.currentTeam.strTeamLogo} />
+                    <img src={this.state.currentTeam.strTeamLogo}  alt="Team Logo"/>
                 </div>
 
                 <div className="paragraph">

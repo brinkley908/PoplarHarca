@@ -39,6 +39,10 @@ code {
             margin: auto;
         }
 
+        label {
+            color: #00b3bc;
+        }
+
         .paragraph {
             white-space: pre-wrap;
             text-align: justify;
@@ -46,6 +50,9 @@ code {
 
         .team-logo {
             margin: 20px 0;
+            background-image: url(images/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
 
             img {
                 height: 155px;
@@ -56,6 +63,18 @@ code {
 
         .MuiInput-root {
             width: 100%;
+
+            .MuiSelect-select.MuiSelect-select {
+                padding-left: 5px;
+            }
+        }
+
+        .MuiInput-root.MuiInput-underline:after {
+            border-bottom: 2px solid #00b3bc;
+        }
+
+        input {
+            padding-left: 20px;
         }
     }
 }
