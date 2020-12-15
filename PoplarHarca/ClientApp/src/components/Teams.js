@@ -27,6 +27,7 @@ export class Teams extends Component {
                 <label>
                     Select a team
                 </label>
+
                 <Select
                     id="teamlist"
                     value={this.state.idTeam}
@@ -39,7 +40,7 @@ export class Teams extends Component {
 
                 </Select>
 
-                 <div className="team-logo">
+                <div className="team-logo">
                     <img src={this.state.currentTeam.strTeamLogo} alt="Team Logo" />
                 </div>
 

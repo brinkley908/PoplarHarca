@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PoplarHarca.Infrastructure;
 using PoplarHarca.Repository;
 using PoplarHarca.Service;
 using System;
@@ -39,6 +41,9 @@ namespace PoplarHarca
             services.AddScoped( typeof( IRepository<> ), typeof( RepositoryBase<> ) )
                     .AddScoped<ITeamsRepository, TeamsRepository>()
                     .AddScoped<ITeamsService, TeamsService>();
+
+            services.AddAutoMapper( options => options.AddProfile<MappingProfile>() );
+
 
             services.AddControllersWithViews();
 

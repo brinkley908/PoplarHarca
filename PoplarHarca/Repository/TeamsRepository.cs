@@ -25,9 +25,11 @@ namespace PoplarHarca.Repository
 
         }
 
-        public List<Team> GetTeams() => _teams;
+        public List<Team> GetTeams() 
+            => _teams;
 
-        public Team GetTeam( int id ) => _teams.FirstOrDefault( x => x.IdTeam == id );
+        public Team GetTeam( int id ) 
+            => _teams.FirstOrDefault( x => x.IdTeam == id );
 
 
     }

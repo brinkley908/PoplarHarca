@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PoplarHarca.Models;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 
 namespace PoplarHarca.Service
 {
@@ -12,25 +14,35 @@ namespace PoplarHarca.Service
 
         private ITeamsRepository _teamsRepository;
 
-        public TeamsService( ITeamsRepository teamsRepository )
+        private readonly IConfigurationProvider _mappingConfig;
+
+        public TeamsService( ITeamsRepository teamsRepository, IConfigurationProvider mappingConfig )
         {
             _teamsRepository = teamsRepository;
+            _mappingConfig = mappingConfig;
         }
 
         public IEnumerable<TeamListItem> GetTeamList()
         {
 
-            var result = new List<TeamListItem>();
-
-            _teamsRepository
+           return _teamsRepository
                 .GetTeams()
-                .ForEach( x => result.Add( new TeamListItem
-                {
-                    IdTeam = x.IdTeam,
-                    StrTeam = x.StrTeam
-                } ) );
+                .AsQueryable()
+                .ProjectTo<TeamListItem>( _mappingConfig )
+                .ToList();
 
-            return result;
+            //var results = new List<TeamListItem>();
+
+            //_teamsRepository
+            //    .GetTeams()
+            //    .ForEach( x => results.Add( new TeamListItem
+            //    {
+            //        IdTeam = x.IdTeam,
+            //        StrTeam = x.StrTeam
+            //    } ) );
+
+            //return results;            
+
 
         }
 
