@@ -2,6 +2,7 @@ body {
   font: 'omnes Pro', sans-serif;
   font-size: 20px;
   background-color: #00b3bc;
+  color: rgba(0, 0, 0, 0.6);
 }
 a {
   color: #0366d6;
@@ -22,6 +23,11 @@ code {
 .content-container h2 {
   font-weight: 700;
 }
+.content-container .content-container--wrapper .social-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .content-container .content-container--wrapper .loading {
   width: 100px;
   height: 100px;
@@ -29,6 +35,7 @@ code {
 }
 .content-container .content-container--wrapper label {
   color: #00b3bc;
+  padding: 5px 0;
 }
 .content-container .content-container--wrapper .paragraph {
   white-space: pre-wrap;

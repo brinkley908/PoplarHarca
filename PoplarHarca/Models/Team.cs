@@ -16,5 +16,15 @@ namespace PoplarHarca.Models
 
         public string StrTeam { get; set; }
 
+        public string StrWebsite { get; set; }
+
+        public string StrFacebook { get; set; }
+
+        public string StrTwitter { get; set; }
+
+        public string StrInstagram { get; set; }
+
+        public string StrAlternate { get; set; }
+
     }
 }

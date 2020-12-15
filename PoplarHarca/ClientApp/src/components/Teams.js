@@ -1,8 +1,8 @@
 ﻿import React, { Component } from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import Loader from 'react-loader-spinner'
-
+import Loader from 'react-loader-spinner';
+import { SocialMedia } from './SocialMedia';
 import "../custom.css";
 
 export class Teams extends Component {
@@ -21,33 +21,55 @@ export class Teams extends Component {
         this.setState({ ...this.state, idTeam: value, currentTeam: team })
     }
 
+    async populateTeamsData() {
+        const response = await fetch('teams/GetTeamList');
+        const data = await response.json();
+        const id = data[0].idTeam;
+        const team = await this.getTeam(id);
+        this.setState({ teamList: data, loading: false, idTeam: id, currentTeam: team });
+    }
+
+    async getTeam(idTeam) {
+        const response = await fetch('teams/GetTeam/' + idTeam);
+        const team = await response.json();
+        return team;
+    }
+
     showContents(list) {
         return (
             <>
-                <label>
-                    Select a team
-                </label>
+                <div className="social-buttons">
 
-                <Select
-                    id="teamlist"
-                    value={this.state.idTeam}
-                    onChange={(e) => this.onChangeTeam(e.target.value)}
-                >
+                    <label>
+                        Select a team
+                    </label>
 
-                    {list.map(list =>
+                    <SocialMedia
+                        Twitter={this.state.currentTeam.strTwitter}
+                        Facebook={this.state.currentTeam.strFacebook}
+                        Instagram={this.state.currentTeam.strInstagram}
+                        Website={this.state.currentTeam.strWebsite}
+                    />
+
+                </div>
+
+                <Select id="teamlist" value={this.state.idTeam} onChange={(e) => this.onChangeTeam(e.target.value)} >
+
+                    {
+                        list.map(list =>
                         <MenuItem key={list.strTeam} value={list.idTeam}>{list.strTeam}</MenuItem>
-                    )}
+                        )
+                    }
 
                 </Select>
 
                 <div className="team-logo">
-                    <img src={this.state.currentTeam.strTeamLogo} alt="Team Logo" />
+                    <img src={this.state.currentTeam.strTeamLogo} alt={this.state.currentTeam.strAlternate} />
                 </div>
 
                 <div className="paragraph">
                     {this.state.currentTeam.strDescriptionEN}
                 </div>
-
 
             </>
         );
@@ -64,8 +86,8 @@ export class Teams extends Component {
                     height={100}
                     width={100}
                     timeout={20000} //3 secs
-
                 />
+
             </div>
 
         );
@@ -77,7 +99,6 @@ export class Teams extends Component {
             ? this.loading()
             : this.showContents(this.state.teamList);
 
-
         return (
             <>
                 {contents}
@@ -87,18 +108,6 @@ export class Teams extends Component {
     }
 
 
-    async populateTeamsData() {
-        const response = await fetch('teams/GetTeamList');
-        const data = await response.json();
-        const id = data[0].idTeam;
-        const team = await this.getTeam(id);
-        this.setState({ teamList: data, loading: false, idTeam: id, currentTeam: team });
-    }
-
-    async getTeam(idTeam) {
-        const response = await fetch('teams/GetTeam/' + idTeam);
-        const team = await response.json();
-        return team;
-    }
+ 
 
 }
