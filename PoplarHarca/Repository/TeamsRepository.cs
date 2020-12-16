@@ -22,7 +22,6 @@ namespace PoplarHarca.Repository
                 var footballTeams = Get().GetAwaiter().GetResult();
                 _teams = footballTeams.Teams;
             }
-
         }
 
         public List<Team> GetTeams() 

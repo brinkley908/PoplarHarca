@@ -5,6 +5,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Http;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace PoplarHarca.Repository
@@ -26,6 +27,7 @@ namespace PoplarHarca.Repository
 
         public async Task<TEntity> Get()
         {
+
             using var request = new HttpRequestMessage( HttpMethod.Get, RequestParams );
 
             if ( GZip )
@@ -34,7 +36,7 @@ namespace PoplarHarca.Repository
             using var client = _clientFactory.CreateClient( ClientName );
 
             using var response = await client.SendAsync( request );
-
+            
             string json;
 
             if ( response.IsSuccessStatusCode )
@@ -49,10 +51,10 @@ namespace PoplarHarca.Repository
                     else
                     {
                         using var reader = new StreamReader( stream, System.Text.Encoding.UTF8 );
-                        json = reader.ReadToEnd();
-                    }
+                       json = reader.ReadToEnd();
+                }
 
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<TEntity>( json );
+                 return JsonConvert.DeserializeObject<TEntity>( json );
 
             }
             else
@@ -61,6 +63,9 @@ namespace PoplarHarca.Repository
             }
 
         }
-      
+
+
+
+
     }
 }

@@ -52,12 +52,20 @@ code {
   margin: auto;
   display: block;
 }
+.content-container .content-container--wrapper .MuiFormControl-root {
+  width: 100%;
+}
+.content-container .content-container--wrapper .MuiInputBase-formControl {
+  border: none;
+}
+.content-container .content-container--wrapper .MuiSelect-select:focus {
+  background-color: #fff;
+}
 .content-container .content-container--wrapper .MuiInput-root {
   width: 100%;
 }
 .content-container .content-container--wrapper .MuiInput-root .MuiSelect-select.MuiSelect-select {
   padding-left: 5px;
-  background-color: rgba(0, 0, 0, 0.05);
 }
 .content-container .content-container--wrapper .MuiInput-root.MuiInput-underline:after {
   border-bottom: 2px solid #00b3bc;

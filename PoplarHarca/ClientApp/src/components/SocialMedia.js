@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
         }
     }
+     
 }));
 
 export const SocialMedia = (props) => {

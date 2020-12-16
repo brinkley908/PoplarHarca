@@ -25,6 +25,8 @@ namespace PoplarHarca.Service
         public IEnumerable<TeamListItem> GetTeamList()
         {
 
+            
+
            return _teamsRepository
                 .GetTeams()
                 .AsQueryable()

@@ -3,7 +3,10 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Loader from 'react-loader-spinner';
 import { SocialMedia } from './SocialMedia';
+import FormControl from '@material-ui/core/FormControl';
+
 import "../custom.css";
+
 
 export class Teams extends Component {
 
@@ -36,6 +39,8 @@ export class Teams extends Component {
     }
 
     showContents(list) {
+        const { classes } = this.props;
+
         return (
             <>
                 <div className="social-buttons">
@@ -53,15 +58,17 @@ export class Teams extends Component {
 
                 </div>
 
-                <Select id="teamlist" value={this.state.idTeam} onChange={(e) => this.onChangeTeam(e.target.value)} >
+                <FormControl variant="outlined">
+                    <Select id="teamlist" value={this.state.idTeam} onChange={(e) => this.onChangeTeam(e.target.value)} >
 
-                    {
-                        list.map(list =>
-                        <MenuItem key={list.strTeam} value={list.idTeam}>{list.strTeam}</MenuItem>
-                        )
-                    }
+                        {
+                            list.map(list =>
+                                <MenuItem key={list.strTeam} value={list.idTeam}>{list.strTeam}</MenuItem>
+                            )
+                        }
 
-                </Select>
+                    </Select>
+                </FormControl>
 
                 <div className="team-logo">
                     <img src={this.state.currentTeam.strTeamLogo} alt={this.state.currentTeam.strAlternate} />
@@ -95,6 +102,7 @@ export class Teams extends Component {
 
     render() {
 
+
         let contents = this.state.loading
             ? this.loading()
             : this.showContents(this.state.teamList);
@@ -108,6 +116,6 @@ export class Teams extends Component {
     }
 
 
- 
+
 
 }
